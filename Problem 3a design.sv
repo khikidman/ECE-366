@@ -18,9 +18,7 @@ module PPA(A, B, Cin, S, Cout);
   
   genvar i, stage;
   
-  // Propagate and Generate for each bit
-  genvar i;
-  
+  // Propagate and Generate for each bit.
   generate
     for (i = 0; i < 16; i = i + 1) begin
       or (P[0][i], A[i], B[i]);
@@ -55,18 +53,18 @@ module PPA(A, B, Cin, S, Cout);
         ) begin: COMBINE
           
           PG_combine pg(
-            p[stage][i-DIST],
-            g[stage][i-DIST],
-            p[stage][i],
-            g[stage][i],
-            p[stage+1][i],
-            g[stage+1][i]
+            P[stage][i-DIST],
+            G[stage][i-DIST],
+            P[stage][i],
+            G[stage][i],
+            P[stage+1][i],
+            G[stage+1][i]
           );
           
         end else begin: PASS
           
-          assign p[stage+1][i] = p[stage][i];
-          assign g[stage+1][i] = g[stage][i];
+          assign P[stage+1][i] = P[stage][i];
+          assign G[stage+1][i] = G[stage][i];
           
         end
       end
@@ -77,8 +75,8 @@ module PPA(A, B, Cin, S, Cout);
   generate
     for (i = 0; i < 16; i = i + 1) begin
       xor (S[i], x[i], C[i]);
-      and (ct[i], p[7][i], Cin);
-      or (C[i+1], g[7][i], ct[i]);
+      and (ct[i], P[7][i], Cin);
+      or (C[i+1], G[7][i], ct[i]);
     end
   endgenerate
   
