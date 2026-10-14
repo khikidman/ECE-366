@@ -18,7 +18,7 @@ module testbench;
 
   initial begin
     $dumpfile("dump.vcd");
-    $dumpvars(0, tesbench);
+    $dumpvars(0, testbench);
     
     check(16'd5,    16'd3,    0);  // 5 + 3 = 8
     check(16'd3,    16'd2,    1);  // 3 + 2 + 1 = 6
@@ -33,7 +33,7 @@ module testbench;
 
     check(16'h00FF, 16'h1, 0);  // carry through blocks 0-7
     check(16'h0FFF, 16'h1, 0);  // carry through blocks 0-11
-    check(16'hFFFF, 16'h1, 0);  // carry through all 8 blocks, Cout=1
+    check(16'hFFFF, 16'h1, 0);  // carry through all 16 blocks, Cout=1
     check(16'hFFFF, 16'h0, 1);  // Cin propagates through all 8 blocks
     check(16'h0F0F, 16'h0101, 0);  // mixed generate/propagate
     check(16'h1234, 16'h9ABC, 1);  // general case with Cin
