@@ -44,4 +44,8 @@ module tb_fourbit_RCA;
         $finish;
     end
 
+    initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, testbench);
+    end
 endmodule
