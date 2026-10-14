@@ -20,7 +20,7 @@ module tb_fourbit_RCA;
 
   initial begin
         $dumpfile("dump.vcd");
-        $dumpvars(0, tb_four_bit_RCA);
+        $dumpvars(0, tb_fourbit_RCA);
     
         $monitor("Time=%0t | A=%b (%0d) | B=%b (%0d) | Cin=%b | S=%b (%0d) | Cout=%b", 
                  $time, A, A, B, B, Cin, S, S, Cout);
@@ -42,10 +42,5 @@ module tb_fourbit_RCA;
         #10;
 
         $finish;
-    end
-
-    initial begin
-    $dumpfile("dump.vcd");
-    $dumpvars(0, testbench);
     end
 endmodule
