@@ -44,7 +44,12 @@ module testbench;
     $monitor("A=%b B=%b Cin=%b | S=%b Cout=%b",
              A, B, Cin, S, Cout);
   end
-  
+
+    initial begin
+    $dumpfile("dump.vcd");
+    $dumpvars(0, testbench);
+  end
+
 endmodule
   
   
