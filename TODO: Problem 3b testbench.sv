@@ -17,7 +17,7 @@ module testbench;
   endtask
 
   initial begin
-    $dumpile("dump.vcd");
+    $dumpfile("dump.vcd");
     $dumpvars(0, tesbench);
     
     check(16'd5,    16'd3,    0);  // 5 + 3 = 8
