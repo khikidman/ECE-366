@@ -28,6 +28,8 @@ module testbench;
     check(32'hFFFFFFFF, 32'h0, 1);  // Cin propagates through all 8 blocks
     check(32'h0F0F0F0F, 32'h01010101, 0);  // mixed generate/propagate
     check(32'h12345678, 32'h9ABCDEF0, 1);  // general case with Cin
+    check(32'd3, ~32'd2, 1);           // 3 - 2 = 1
+    check(-32'sd5, ~(-32'sd2), 1);     // -5 - (-2) = -3
     $finish;
   end
 
