@@ -1,42 +1,42 @@
-
 .data
+n: .word 45
+result: .word 0
 
 .text
 .globl main
 
 main:
-    li $a0, 45           # n = 45
-    jal fibonacci       # call fibonacci(n)
+    lw $a0, n
+    jal fibonacci
 
-    move $a0, $v0       # print result
+    sw $v0, result
+
+    move $a0, $v0
     li $v0, 1
     syscall
 
-    li $v0, 10          # exit program
+    li $v0, 10
     syscall
 
 fibonacci:
-    # if n <= 1, return n
     ble $a0, 1, done_base
 
-    # a = 0, b = 1
     li $t0, 0
     li $t1, 1
 
-    # loop counter = n - 1
     addi $t2, $a0, -1
 
 loop:
-    move $t3, $t1       # temp = b
-    add $t1, $t0, $t1   # b = a + b
-    move $t0, $t3       # a = temp
+    move $t3, $t1
+    add $t1, $t0, $t1
+    move $t0, $t3
 
-    addi $t2, $t2, -1   # decrement counter
+    addi $t2, $t2, -1
     bne $t2, $zero, loop
 
-    move $v0, $t1       # return b
+    move $v0, $t1
     jr $ra
 
 done_base:
-    move $v0, $a0       # return n
+    move $v0, $a0
     jr $ra
