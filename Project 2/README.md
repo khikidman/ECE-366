@@ -3,6 +3,7 @@
 **GitHub Link:** https://github.com/khikidman/ECE-366
 
 **Team Contributions:**
+
 Chris Amankwah (caman2): Worked on the Fibonacci function and base case implementation.
 
 Khi Kidman (mkidma2): Worked on the loop logic and register operations.
