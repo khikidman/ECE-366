@@ -8,3 +8,7 @@ Sara Shujath (sshuj):
 GitHub Link: https://github.com/khikidman/ECE-366
 
 How we can run the MIPS program to get the n th Fibonacci number for a given n:
+
+
+
+-----------------------------------------------------------------------------
