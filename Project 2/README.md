@@ -4,8 +4,11 @@
 
 **Team Contributions:**
 Chris Amankwah (caman2): Worked on the Fibonacci function and base case implementation.
+
 Khi Kidman (mkidma2): Worked on the loop logic and register operations.
+
 Bhumi Pandhare (bpand5): Worked on the MIPS code implementation and testing.
+
 Sara Shujath (sshuj): Worked on debugging the code and verifying the Fibonacci outputs.
 
 **How we can run the MIPS program to get the n th Fibonacci number for a given n:**
