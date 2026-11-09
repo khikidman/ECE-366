@@ -1,4 +1,6 @@
-**Project 2: Progress Report #1**
+**Project 2:**
+
+**Progress Report #1**
 
 **GitHub Link:** https://github.com/khikidman/ECE-366
 
